@@ -34,12 +34,10 @@ public class Main {
     private void searchWix() {
         try {
             driver.get("https://www.google.com");
-            WebElement searchField = driver.findElement(By.name("q"));
-            searchField.sendKeys("Wix");
+            driver.findElement(By.name("q")).sendKeys("Wix");
             driver.findElements(name("btnK")).get(1).click();
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Failed to complete search " + e + ". Trying another way");
-            driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+            System.out.println("Failed to complete search " + e);
         }
     }
 
